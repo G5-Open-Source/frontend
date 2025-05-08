@@ -1,0 +1,88 @@
+{
+  "header": {
+    "title": "BeCode",
+    "button1": "Forum",
+    "button2": "Projects",
+    "button3": "Notifications",
+    "freelancers": "Freelancers",
+    "investors": "Investors",
+    "login": "Login"
+  },
+  "projects": {
+    "project": "Project",
+    "items": {
+      "1": {
+        "title": "Dating App",
+        "deadline": "2024",
+        "description": "A modern dating application built with Angular"
+      },
+      "2": {
+        "title": "Medical App",
+        "deadline": "2024",
+        "description": "Healthcare management application"
+      },
+      "3": {
+        "title": "Project Management",
+        "deadline": "2024",
+        "description": "Task and project management solution"
+      }
+    },
+    "seeMore": "See More"
+  },
+  "hero": {
+    "title": "Connect talent with ideas",
+    "subtitle": "Marketplace for freelancers, teams and visionaries",
+    "explore": "Explore Freelancers",
+    "publish": "Publish an Idea"
+  },
+  "freelancers": {
+    "title": "Top Freelancers and Teams",
+    "viewProfile": "View Profile"
+  },
+  "investors": {
+    "title": "Do you have an idea?",
+    "subtitle": "Post your proposal and find the ideal team to develop it",
+    "publish": "Publish Idea"
+  },
+  "pages": {
+    "title": "Available Web Pages",
+    "portfolio": "Portfolio Landing",
+    "startup": "Creative Startup",
+    "order": "Order"
+  },
+  "footer": {
+    "copyright": "© 2025 BeCode. All rights reserved",
+    "about": "About Us",
+    "help": "Help",
+    "policies": "Policies",
+    "contact": "Contact"
+  },
+  "modal": {
+    "title": "Publish your Idea",
+    "fullName": "Full Name",
+    "email": "Email",
+    "idea": "Idea Description",
+    "submit": "Submit Proposal"
+  },
+  "LANGUAGE": "Language",
+  "search": {
+    "placeholder": "Search...",
+    "label": "Search",
+    "filters": {
+      "title": "Filters",
+      "options": {
+        "freelancer": "Freelancer",
+        "company": "Company",
+        "recruiting": "Recruiting",
+        "cybersecurity": "Cybersecurity",
+        "aiml": "AI and Machine Learning",
+        "dataScience": "Data Science",
+        "fullStack": "Full Stack",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "operativeSystems": "Operative Systems",
+        "webComm": "Web and Communications"
+      }
+    }
+  }
+}

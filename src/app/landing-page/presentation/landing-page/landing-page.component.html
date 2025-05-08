@@ -1,0 +1,79 @@
+<header>
+  <h2>{{ 'header.title' | translate }}</h2>
+  <nav>
+    <a href="#freelancers">{{ 'header.freelancers' | translate }}</a>
+    <a href="#empresarios">{{ 'header.investors' | translate }}</a>
+    <a href="#paginas">{{ 'header.login' | translate }}</a>
+    <app-language-switcher></app-language-switcher>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>{{ 'hero.title' | translate }}</h1>
+  <p>{{ 'hero.subtitle' | translate }}</p>
+  <button (click)="explorarFreelancers()">{{ 'hero.explore' | translate }}</button>
+  <button (click)="publicarIdea()">{{ 'hero.publish' | translate }}</button>
+</div>
+
+<section id="freelancers">
+  <h2>{{ 'freelancers.title' | translate }}</h2>
+  <div class="cards">
+    <div class="card" *ngFor="let freelancer of freelancers">
+      <img alt = "{{ freelancer.nombre }}" [alt]="freelancer.nombre" [src]="freelancer.imagen" [alt]="freelancer.nombre"/>
+      <h3>{{freelancer.nombre}}</h3>
+      <p>{{freelancer.descripcion}}</p>
+      <button (click)="verPerfil(freelancer.nombre)">{{ 'freelancers.viewProfile' | translate }}</button>
+    </div>
+  </div>
+</section>
+
+<section id="empresarios" class="empresarios-section">
+  <h2>{{ 'investors.title' | translate }}</h2>
+  <p>{{ 'investors.subtitle' | translate }}</p>
+  <button id="abrirModal" class="publish-button">{{ 'investors.publish' | translate }}</button>
+</section>
+
+<section id="paginas">
+  <h2>{{ 'pages.title' | translate }}</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG3ptfhfyM8bKN6avVmymwughJ8dti86IybA&s" alt="Web"/>
+      <h3>{{ 'pages.portfolio' | translate }}</h3>
+      <button>{{ 'pages.order' | translate }}</button>
+    </div>
+    <div class="card">
+      <img src="https://media.istockphoto.com/id/1287601917/es/vídeo/acercarse-de-un-equipo-multiétnico-diverso-que-tiene-una-conversación-en-la-sala-de-reuniones.jpg?s=640x640&k=20&c=4HiY5Wpq4Hs6kZpZItbvZW9n0jGlsbN6EslPtYID9r4=" alt="Web"/>
+      <h3>{{ 'pages.startup' | translate }}</h3>
+      <button>{{ 'pages.order' | translate }}</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>{{ 'footer.copyright' | translate }}</p>
+  <div>
+    <a href="#">{{ 'footer.about' | translate }}</a>
+    <a href="#">{{ 'footer.help' | translate }}</a>
+    <a href="#">{{ 'footer.policies' | translate }}</a>
+    <a href="#">{{ 'footer.contact' | translate }}</a>
+  </div>
+</footer>
+
+<div id="formModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>{{ 'modal.title' | translate }}</h2>
+    <form (ngSubmit)="onSubmit()">
+      <label for="nombre">{{ 'modal.fullName' | translate }}</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre" required/>
+
+      <label for="correo">{{ 'modal.email' | translate }}</label>
+      <input type="email" id="correo" name="correo" [(ngModel)]="formData.correo" required/>
+
+      <label for="idea">{{ 'modal.idea' | translate }}</label>
+      <textarea id="idea" name="idea" rows="5" [(ngModel)]="formData.idea" required></textarea>
+
+      <button type="submit">{{ 'modal.submit' | translate }}</button>
+    </form>
+  </div>
+</div>

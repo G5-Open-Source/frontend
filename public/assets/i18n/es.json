@@ -1,0 +1,88 @@
+{
+  "header": {
+    "title": "BeCode",
+    "button1": "Foro",
+    "button2": "Proyectos",
+    "button3": "Notificaciones",
+    "freelancers": "Freelancers",
+    "investors": "Inversores",
+    "login": "Inicia Sesión"
+  },
+  "projects": {
+    "project": "Proyecto",
+    "seeMore": "Ver más",
+    "items": {
+      "1": {
+        "title": "Aplicación de citas",
+        "deadline": "20 de abril del 2025",
+        "description": "Aplicación para el desarrollo de un entorno para hacer reservaciones o confirmar citas"
+      },
+      "2": {
+        "title": "Aplicación Medica",
+        "deadline": "28 de abril del 2025",
+        "description": "Aplicación para la visualización de consultas o resetas medicas para los pacientes y doctores"
+      },
+      "3": {
+        "title": "Aplicación de agendas",
+        "deadline": "3 de mayo del 2025",
+        "description": "Aplicación para la gestión de una agenda electronica en la palma de tu mano"
+      }
+    }
+  },
+  "hero": {
+    "title": "Conecta talento con ideas",
+    "subtitle": "Marketplace para freelancers, equipos y visionarios",
+    "explore": "Explora Freelancers",
+    "publish": "Publica una Idea"
+  },
+  "freelancers": {
+    "title": "Top Freelancers y Equipos",
+    "viewProfile": "Ver Perfil"
+  },
+  "investors": {
+    "title": "¿Tienes una idea?",
+    "subtitle": "Publica tu propuesta y encuentra al equipo ideal para desarrollarla",
+    "publish": "Publicar Idea"
+  },
+  "pages": {
+    "title": "Páginas Web Disponibles",
+    "portfolio": "Landing de Portafolio",
+    "startup": "Startup Creativa",
+    "order": "Ordenar"
+  },
+  "footer": {
+    "copyright": "© 2025 BeCode. Todos los derechos reservados",
+    "about": "Nosotros",
+    "help": "Ayuda",
+    "policies": "Políticas",
+    "contact": "Contacto"
+  },
+  "modal": {
+    "title": "Publica tu Idea",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "idea": "Descripción de tu Idea",
+    "submit": "Enviar Propuesta"
+  },
+  "LANGUAGE": "Idioma",
+  "search": {
+    "placeholder": "Buscar...",
+    "label": "Buscar",
+    "filters": {
+      "title": "Filtros",
+      "options": {
+        "freelancer": "Freelancer",
+        "company": "Empresa",
+        "recruiting": "Reclutamiento",
+        "cybersecurity": "Ciberseguridad",
+        "aiml": "IA y Machine Learning",
+        "dataScience": "Ciencia de Datos",
+        "fullStack": "Full Stack",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "operativeSystems": "Sistemas Operativos",
+        "webComm": "Web y Comunicaciones"
+      }
+    }
+  }
+}

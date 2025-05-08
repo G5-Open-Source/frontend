@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
+.nunito-title {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+}
+
+.app-header {
+  width: 100%;
+  background-color: #00b3b3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title-container {
+  margin-right: 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #008080 !important; 
+  color: white !important;
+}
+
+.nav-button:hover {
+  background-color: #006666 !important;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.profile-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.language-switcher-container {
+  margin-top: 0.5rem;
+}
