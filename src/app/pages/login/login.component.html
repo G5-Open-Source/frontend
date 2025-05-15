@@ -31,5 +31,8 @@
     <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
   </form>
 
-  <p>¿Eres nuevo? <a routerLink="/register">Crear cuenta</a></p>
+  <p>
+    ¿Eres nuevo?
+    <a (click)="goToRegister()" style="cursor: pointer">Crear cuenta</a>
+  </p>
 </div>

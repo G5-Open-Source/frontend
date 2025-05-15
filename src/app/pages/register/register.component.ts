@@ -6,11 +6,12 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  standalone: true, // ✅ componente independiente
-  imports: [CommonModule, ReactiveFormsModule], // ✅ módulos necesarios
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
@@ -18,12 +19,12 @@ export class RegisterComponent {
   registerForm: FormGroup;
   showPassword = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      address: ['', Validators.required], // <-- agregado el campo address
+      address: ['', Validators.required],
     });
   }
 
@@ -49,8 +50,15 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log('Datos de registro:', this.registerForm.value);
-      // Aquí puedes agregar lógica para enviar los datos a tu backend
+      const userData = this.registerForm.value;
+
+      // Guardar en localStorage (opcional)
+      localStorage.setItem('registeredUser', JSON.stringify(userData));
+
+      console.log('Datos de registro:', userData);
+
+      // Redirigir al login
+      this.router.navigate(['/login']);
     }
   }
 }

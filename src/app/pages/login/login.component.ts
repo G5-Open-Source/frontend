@@ -6,11 +6,12 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  standalone: true, // ✅ esto es importante
-  imports: [CommonModule, ReactiveFormsModule], // ✅ importar módulos requeridos
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
@@ -18,7 +19,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   showPassword = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -39,8 +40,29 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Datos de login:', this.loginForm.value);
-      // Aquí iría la lógica de autenticación o redirección
+      const email = this.email.value;
+      const password = this.password.value;
+
+      const storedUser = localStorage.getItem('registeredUser');
+
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+
+        if (user.email === email && user.password === password) {
+          console.log('Login exitoso');
+          localStorage.setItem('loggedInUser', JSON.stringify(user));
+          this.router.navigate(['/home']);
+        } else {
+          alert('Correo o contraseña incorrectos');
+        }
+      } else {
+        alert('No hay usuarios registrados. Serás redirigido al registro.');
+        this.router.navigate(['/register']);
+      }
     }
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
   }
 }

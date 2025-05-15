@@ -3,7 +3,7 @@
 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <label for="name">¿Cómo te llamas?</label>
-    <input id="name" formControlName="name" placeholder="Nombre" />
+    <input id="name" type="text" formControlName="name" placeholder="Nombre" />
     <div *ngIf="name.invalid && name.touched" class="error">
       Nombre obligatorio (mínimo 2 letras)
     </div>
@@ -11,6 +11,7 @@
     <label for="email">¿Cuál es tu correo electrónico?</label>
     <input
       id="email"
+      type="email"
       formControlName="email"
       placeholder="Correo electrónico"
     />
@@ -34,6 +35,7 @@
     <label for="address">¿Cuál es la dirección de tu domicilio?</label>
     <input
       id="address"
+      type="text"
       formControlName="address"
       placeholder="Ej: Jr. Flores 222"
     />
