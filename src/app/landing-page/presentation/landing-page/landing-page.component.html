@@ -1,10 +1,10 @@
 <header>
   <h2>{{ "header.title" | translate }}</h2>
-  <nav>
+  <nav class="navbar-links">
     <a href="#freelancers">{{ "header.freelancers" | translate }}</a>
     <a href="#empresarios">{{ "header.investors" | translate }}</a>
-    <a href="#paginas">{{ "header.login" | translate }}</a>
-    <a href="#paginas">{{ "Register" | translate }}</a>
+    <a (click)="goToLogin()">{{ "header.login" | translate }}</a>
+    <a (click)="goToRegister()">{{ "register" | translate }}</a>
     <app-language-switcher></app-language-switcher>
   </nav>
 </header>

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageSwitcherComponent } from '../../../shared/presentation/language-switcher.component/language-switcher.component.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -17,6 +18,8 @@ import { LanguageSwitcherComponent } from '../../../shared/presentation/language
   styleUrl: './landing-page.component.css',
 })
 export class LandingPageComponent implements OnInit {
+  constructor(private router: Router) {}
+
   formData = {
     nombre: '',
     correo: '',
@@ -52,6 +55,7 @@ export class LandingPageComponent implements OnInit {
       modal.style.display = 'none';
     }
   }
+
   explorarFreelancers() {
     console.log('Explorando freelancers');
   }
@@ -62,6 +66,14 @@ export class LandingPageComponent implements OnInit {
 
   verPerfil(nombre: string) {
     console.log(`Viendo perfil de ${nombre}`);
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
   freelancers = [
