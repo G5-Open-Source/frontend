@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap");
 
 .nunito-title {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 32px;
   color: #000000;
 }
 
 .app-header {
+  background: url("https://isil.pe/wp-content/uploads/2023/09/cc-airbnb-1.webp");
   width: 100%;
-  background-color: #00b3b3;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 60vh;
+  background-color: #bd2a2a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -41,12 +43,12 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
-  background-color: #008080 !important; 
-  color: white !important;
+  background-color: #ebebeb !important;
+  color: rgb(8, 8, 8) !important;
 }
 
 .nav-button:hover {
-  background-color: #006666 !important;
+  background-color: #ff5a5f !important;
 }
 
 .right-section {

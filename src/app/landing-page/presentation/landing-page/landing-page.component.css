@@ -25,12 +25,12 @@ header nav a {
   margin-left: 20px;
   text-decoration: none;
   color: var(--secondary-color);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url("https://isil.pe/wp-content/uploads/2023/09/cc-airbnb-1.webp");
+    url("https://isil.pe/wp-content/uploads/2023/09/cc-airbnb-1.webp");
   background-position: center;
   background-size: cover;
   height: 60vh;
@@ -52,7 +52,7 @@ header nav a {
 }
 
 .hero button {
-  background-color: #008B8B;
+  background-color: #bd2a2a;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -65,7 +65,7 @@ header nav a {
 }
 
 .hero button:hover {
-  background-color: #006666;
+  background-color: #bd2a2a;
   transform: translateY(-2px);
 }
 
@@ -87,7 +87,7 @@ section {
   text-align: center;
   transition: transform 0.3s;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(231, 228, 228, 0.1);
 }
 
 .card img {
@@ -110,7 +110,7 @@ section {
 }
 
 .card button {
-  background-color: #008B8B;
+  background-color: #bd2a2a;
   color: white;
   border: none;
   padding: 8px 20px;
@@ -125,7 +125,7 @@ section {
 }
 
 .card button:hover {
-  background-color: #006666;
+  background-color: #bd2a2a;
   transform: translateY(-2px);
 }
 
@@ -183,7 +183,7 @@ footer a:hover {
 }
 
 .publish-button {
-  background-color: #008B8B;
+  background-color: #bd2a2a;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -237,7 +237,7 @@ footer a:hover {
 
 .modal-content button {
   margin-top: 20px;
-  background-color: #008B8B;
+  background-color: #bd2a2a;
   color: white;
   border: none;
   padding: 12px 20px;
