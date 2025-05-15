@@ -7,15 +7,20 @@ import { LanguageSwitcherComponent } from '../../../shared/presentation/language
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, LanguageSwitcherComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+    LanguageSwitcherComponent,
+  ],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+  styleUrl: './landing-page.component.css',
 })
 export class LandingPageComponent implements OnInit {
   formData = {
     nombre: '',
     correo: '',
-    idea: ''
+    idea: '',
   };
 
   ngOnInit() {
@@ -63,12 +68,14 @@ export class LandingPageComponent implements OnInit {
     {
       nombre: 'Diego Seijas',
       descripcion: 'Diseñadora UX/UI, programador Web',
-      imagen: 'https://egt.com.co/wp-content/uploads/2023/07/06-07-Banner-web-1600x600-1-1024x384.png'
+      imagen:
+        'https://egt.com.co/wp-content/uploads/2023/07/06-07-Banner-web-1600x600-1-1024x384.png',
     },
     {
       nombre: 'Andrés Gómez',
       descripcion: 'Desarrollador Full Stack',
-      imagen: 'https://girolabs.com/wp-content/uploads/2022/01/pexels-olia-danilevich-4974915.jpg'
-    }
+      imagen:
+        'https://girolabs.com/wp-content/uploads/2022/01/pexels-olia-danilevich-4974915.jpg',
+    },
   ];
 }

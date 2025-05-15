@@ -1,0 +1,62 @@
+<div class="register-container">
+  <h2>Crear una cuenta</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label for="name">¿Cómo te llamas?</label>
+    <input id="name" formControlName="name" placeholder="Nombre" />
+    <div *ngIf="name.invalid && name.touched" class="error">
+      Nombre obligatorio (mínimo 2 letras)
+    </div>
+
+    <label for="email">¿Cuál es tu correo electrónico?</label>
+    <input
+      id="email"
+      formControlName="email"
+      placeholder="Correo electrónico"
+    />
+    <div *ngIf="email.invalid && email.touched" class="error">
+      Correo inválido o vacío
+    </div>
+
+    <label for="password">Crear una contraseña</label>
+    <div class="password-wrapper">
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        id="password"
+        formControlName="password"
+        placeholder="Contraseña"
+      />
+      <button
+        type="button"
+        (click)="togglePasswordVisibility()"
+        class="toggle-btn"
+      >
+        {{ showPassword ? "Ocultar" : "Mostrar" }}
+      </button>
+    </div>
+    <div *ngIf="password.invalid && password.touched" class="error">
+      Mínimo 6 caracteres
+    </div>
+
+    <label for="address">¿Cuál es la dirección de tu domicilio?</label>
+    <input
+      id="address"
+      formControlName="address"
+      placeholder="Ej: Jr. Flores 222"
+    />
+    <div *ngIf="address.invalid && address.touched" class="error">
+      Dirección obligatoria
+    </div>
+
+    <div class="terms">
+      Al continuar, usted está de acuerdo con nuestros
+      <a href="#">Términos de uso</a> y <a href="#">Política de privacidad</a>.
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">
+      Crear una cuenta
+    </button>
+  </form>
+
+  <p>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
+</div>
