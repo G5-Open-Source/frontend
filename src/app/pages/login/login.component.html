@@ -20,9 +20,6 @@
         formControlName="password"
         placeholder="Contraseña"
       />
-      <button type="button" (click)="togglePasswordVisibility()">
-        {{ showPassword ? "Ocultar" : "Mostrar" }}
-      </button>
     </div>
     <div *ngIf="password.invalid && password.touched" class="error">
       Mínimo 6 caracteres
