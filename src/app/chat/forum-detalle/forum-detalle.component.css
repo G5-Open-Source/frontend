@@ -1,0 +1,77 @@
+.foro-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f5f1f1;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    gap: 10px;
+    overflow: hidden;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .btn-volver {
+    align-self: flex-start;
+    background-color: #f32d2d;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-volver:hover {
+    background-color: #d02121;
+  }
+  
+  .mensajes {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    scroll-behavior: smooth;
+  
+    app-forum-message {
+      animation: fadeInUp 0.3s ease;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  app-forum-input {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+  

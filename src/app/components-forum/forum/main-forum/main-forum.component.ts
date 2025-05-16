@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Forum } from '../../../models/forum.model';
 import { ForumService } from '../../../services-forum/forum.service';
 
@@ -17,7 +18,10 @@ export class MainForumComponent implements OnInit {
     order: 0
   };
 
-  constructor(private forumService: ForumService) {}
+  constructor(
+    private forumService: ForumService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.forumService.getMainForum().subscribe(forum => {
@@ -25,7 +29,7 @@ export class MainForumComponent implements OnInit {
     });
   }
 
-  navigateToForum(): void {
-    console.log(`Navegando al foro: ${this.mainForum.name}`);
+  navigateToForo(): void {
+    this.router.navigate(['/foro']);
   }
 }

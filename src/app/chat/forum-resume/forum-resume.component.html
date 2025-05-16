@@ -1,0 +1,29 @@
+<div class="foro-resumen-wrapper">
+    <h2>Nombre del proyecto</h2>
+  
+    <div class="info-proyecto">
+      <p>📁 15 Miembros</p>
+      <p>📁 5 Actividades restantes</p>
+      <p>📁 1 Reunión agendada</p>
+    </div>
+  
+    <div class="foro-principal" (click)="irADetalle(0)">
+      <span>Foro Principal</span>
+      <div class="icon">👥</div>
+    </div>
+  
+    <hr />
+  
+    <div class="titulo-subforos">SubForos</div>
+    <div class="subforos-lista">
+      <div
+        class="subforo-card"
+        *ngFor="let subforo of subforos"
+        (click)="irADetalle(subforo.id)"
+      >
+        <span>Subforo #{{ subforo.id }}</span>
+        <div class="icon">👥</div>
+      </div>
+    </div>
+  </div>
+  

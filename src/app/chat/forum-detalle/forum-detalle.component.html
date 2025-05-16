@@ -1,0 +1,19 @@
+<div class="foro-container">
+    <button class="btn-volver" (click)="volver()">⬅ Volver</button>
+  
+    <h2>Subforo #{{ subforoId }}</h2>
+  
+    <div class="mensajes">
+      <app-forum-message
+        *ngFor="let mensaje of mensajes"
+        [autor]="mensaje.autor"
+        [hora]="mensaje.hora"
+        [tipo]="mensaje.tipo"
+        [contenido]="mensaje.contenido"
+      >
+      </app-forum-message>
+    </div>
+  
+    <app-forum-input (mensajeEnviado)="enviarMensaje($event)"></app-forum-input>
+  </div>
+  

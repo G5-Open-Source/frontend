@@ -1,0 +1,34 @@
+.mensaje {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 60%;
+    margin-left: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  .mensaje-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 3px;
+    font-weight: bold;
+  }
+  
+  .mensaje-body {
+    word-wrap: break-word;
+    font-size: 0.95rem;
+  }
+  
+  .mensaje-imagen {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .mensaje-audio {
+    width: 100%;
+  }
+  

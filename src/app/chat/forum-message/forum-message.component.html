@@ -1,0 +1,27 @@
+<div class="mensaje">
+    <div class="mensaje-header">
+      <strong>{{ autor }}</strong>
+      <span class="hora">{{ hora }}</span>
+    </div>
+  
+    <div class="mensaje-body" [ngSwitch]="tipo">
+      <p *ngSwitchCase="'texto'">{{ contenido }}</p>
+  
+      <img
+        *ngSwitchCase="'imagen'"
+        [src]="contenido"
+        alt="imagen"
+        class="mensaje-imagen"
+      />
+  
+      <audio
+        *ngSwitchCase="'audio'"
+        [src]="contenido"
+        controls
+        class="mensaje-audio"
+      ></audio>
+  
+      <p *ngSwitchDefault>{{ contenido }}</p>
+    </div>
+  </div>
+  

@@ -4,6 +4,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LandingPageComponent } from './landing-page/presentation/landing-page/landing-page.component';
 import { TheProjectsPageComponent } from './projects/presentation/the-projects.page/the-projects.page.component';
 import { ForumPagesComponent } from './components-forum/forum-pages/forum-pages.component';
+import { ForumDetalleComponent } from './chat/forum-detalle/forum-detalle.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -18,5 +20,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forum', component: ForumPagesComponent },
+  { path: 'foro', component: ForumDetalleComponent },
   { path: '**', redirectTo: '' },
 ];

@@ -1,0 +1,14 @@
+<div class="input-wrapper">
+    <input
+      type="text"
+      placeholder="Escribe un mensaje..."
+      [(ngModel)]="mensaje"
+      (keydown.enter)="enviarTexto()" />
+  
+    <label class="file-btn">
+      <input type="file" hidden (change)="onArchivoSeleccionado($event)" />
+    </label>
+  
+    <button (click)="enviarTexto()">Enviar</button>
+  </div>
+  
