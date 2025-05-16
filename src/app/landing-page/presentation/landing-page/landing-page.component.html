@@ -1,7 +1,7 @@
 <header>
   <h2>{{ "header.title" | translate }}</h2>
   <nav class="navbar-links">
-    <a href="#freelancers">{{ "Foros" | translate }}</a>
+    <a (click)="goToForum()">{{ "Foros" | translate }}</a>
     <a href="#empresarios">{{ "header.investors" | translate }}</a>
     <a (click)="goToLogin()">{{ "header.login" | translate }}</a>
     <a (click)="goToRegister()">{{ "register" | translate }}</a>

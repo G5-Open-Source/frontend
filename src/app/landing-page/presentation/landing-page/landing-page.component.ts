@@ -76,6 +76,10 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  goToForum() {
+    this.router.navigate(['/forum']);
+  }
+
   freelancers = [
     {
       nombre: 'Diego Seijas',
