@@ -1,0 +1,18 @@
+.becode-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.forums-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
