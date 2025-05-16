@@ -1,7 +1,12 @@
 <header class="header">
   <div class="logo-container">
     <div class="logo">
-      <img src="assets/images/BeCode.png" alt="BeCode Logo" class="logo-icon">
+      <!-- Cambiado a una imagen por enlace -->
+      <img
+        src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png"
+        alt="BeCode Logo"
+        class="logo-icon"
+      />
       <span class="logo-text">BeCode</span>
     </div>
   </div>
@@ -11,7 +16,8 @@
       *ngFor="let item of navItems"
       class="nav-button"
       [class.active]="activeItem === item"
-      (click)="setActiveItem(item)">
+      (click)="setActiveItem(item)"
+    >
       {{ item }}
     </button>
   </div>
@@ -22,9 +28,7 @@
       <span class="user-role">{{ user.role }}</span>
     </div>
     <div class="user-avatar">
-      <img [src]="user.avatarUrl" alt="User Avatar" class="avatar-img">
+      <img [src]="user.avatarUrl" alt="User Avatar" class="avatar-img" />
     </div>
   </div>
 </header>
-
-

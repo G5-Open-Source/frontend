@@ -1,8 +1,12 @@
 <header>
-  <h2>{{ "header.title" | translate }}</h2>
+  <img
+    src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png"
+    alt="BeCode Logo"
+    class="logo-icon"
+  />
   <nav class="navbar-links">
     <a (click)="goToForum()">{{ "Foros" | translate }}</a>
-    <a href="#empresarios">{{ "header.investors" | translate }}</a>
+    <a href="#empresarios">{{ "Proyects" | translate }}</a>
     <a (click)="goToLogin()">{{ "header.login" | translate }}</a>
     <a (click)="goToRegister()">{{ "register" | translate }}</a>
     <app-language-switcher></app-language-switcher>
