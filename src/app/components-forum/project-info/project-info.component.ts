@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { Project } from '../../models/project.model';
-import { ProjectService } from '../../services/project.service';
+import { ProjectService } from '../../services-forum/project.service';
 
 @Component({
   selector: 'app-project-info',
