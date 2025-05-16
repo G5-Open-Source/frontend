@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -9,7 +9,7 @@ import { NgFor } from '@angular/common';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  navItems = ['Foro', 'Proyectos', 'Invitaciones', 'Notificaciones'];
+  navItems: string[] = ['Projects', 'Foro', 'Invitaciones', 'Notificaciones'];
   activeItem = 'Foro';
   user = {
     username: 'Adriana',
@@ -17,7 +17,12 @@ export class HeaderComponent {
     avatarUrl: 'https://cdn-icons-png.flaticon.com/512/3532/3532704.png',
   };
 
-  setActiveItem(item: string): void {
+  constructor(private router: Router) { }
+
+  setActiveItem(item: string) {
     this.activeItem = item;
+    if (item === 'Projects') {  // Assuming 'Projects' is one of your navItems
+      this.router.navigate(['/projects']);
+    }
   }
 }

@@ -52,13 +52,11 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const userData = this.registerForm.value;
 
-      // Guardar en localStorage (opcional)
       localStorage.setItem('registeredUser', JSON.stringify(userData));
 
       console.log('Datos de registro:', userData);
 
-      // Redirigir al login
-      this.router.navigate(['/login']);
+      this.router.navigate(['/select']);
     }
   }
 }

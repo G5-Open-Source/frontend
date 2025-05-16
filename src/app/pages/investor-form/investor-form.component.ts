@@ -33,16 +33,15 @@ export class InvestorFormComponent implements OnInit {
   submitForm() {
     if (this.investorForm.valid) {
       console.log('Datos del formulario de inversionista:', this.investorForm.value);
-      // Aquí podrías enviar los datos a un servicio
     } else {
       Object.keys(this.investorForm.controls).forEach(key => {
         this.investorForm.get(key)?.markAsTouched();
       });
     }
-  }
+    }
 
   goToHomePage() {
-    this.router.navigate(['/select']);
+    this.router.navigate(['/forum']);
   }
 
   onFileSelected(event: any) {

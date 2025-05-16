@@ -49,6 +49,6 @@ export class ForumDetalleComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/forum']);
   }
 }

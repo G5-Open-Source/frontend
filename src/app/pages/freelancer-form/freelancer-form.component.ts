@@ -37,6 +37,6 @@ export class FreelancerFormComponent implements OnInit {
   }
 
   goToHomePage() {
-    this.router.navigate(['/select']);
+    this.router.navigate(['/forum']);
   }
 }

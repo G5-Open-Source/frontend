@@ -9,17 +9,16 @@ import {selectusertype} from './pages/select-user-type/select-user-type.componen
 import {InvestorFormComponent} from './pages/investor-form/investor-form.component';
 import {FreelancerFormComponent} from './pages/freelancer-form/freelancer-form.component';
 
+
 export const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
     children: [
-      {
-        path: '',
-        component: TheProjectsPageComponent,
-      }
+
     ],
   },
+  { path: 'projects', component: TheProjectsPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forum', component: ForumPagesComponent },

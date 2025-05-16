@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { Forum } from '../../../models/forum.model';
@@ -13,7 +14,7 @@ import { ForumService } from '../../../services-forum/forum.service';
 export class SubForumComponent implements OnInit {
   subForums: Forum[] = [];
 
-  constructor(private forumService: ForumService) {}
+  constructor(private forumService: ForumService, private router: Router) {}
 
   ngOnInit(): void {
     this.forumService.getSubForums().subscribe(forums => {
@@ -21,7 +22,7 @@ export class SubForumComponent implements OnInit {
     });
   }
 
-  navigateToSubforum(forum: Forum): void {
-    console.log(`Navegando al subforo: ${forum.name}`);
+  navigateToSubforum(forum: any) {
+    this.router.navigate(['/foro']);
   }
 }
