@@ -1,0 +1,180 @@
+.freelancer-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.freelancer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-info {
+  background-color: #f8f8f8;
+  color: #757575;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: right;
+  border: 1px solid #eee;
+  margin-right: 15px;
+}
+
+.header-arrow {
+  background-color: #424242;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.freelancer-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.form-card {
+  background-color: white;
+  padding: 90px 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-group {
+  margin-bottom: 50px;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 1px 4px rgba(33, 150, 243, 0.2);
+}
+
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 55px;
+  width: 100%;
+}
+
+.primary-button {
+  background-color: #29b6f6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+}
+
+.secondary-button {
+  background-color: white;
+  color: #757575;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: auto;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+  .freelancer-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .header-right {
+    margin-top: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-info {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+}

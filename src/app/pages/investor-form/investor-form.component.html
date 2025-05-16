@@ -1,0 +1,72 @@
+<div class="investor-container">
+  <header class="investor-header">
+    <div class="header-left">
+      <div class="logo-container">
+        <img src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png" alt="BeCode Logo" class="logo-image">
+        <span class="logo-text">BeCode</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-info">
+        <p class="header-message">¡Muy bien Kael! Comencemos con la creación de tu proyecto. Recuerda que usted será el propietario.</p>
+      </div>
+      <div class="header-arrow">
+        &lt;
+      </div>
+    </div>
+  </header>
+
+  <main class="investor-main">
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="projectName" class="form-label">Nombre del proyecto</label>
+          <input type="text" id="projectName" class="form-input" formControlName="projectName">
+        </div>
+        <div class="form-group">
+          <label for="invitationCode" class="form-label">Código de invitación</label>
+          <input type="text" id="invitationCode" class="form-input" formControlName="invitationCode">
+        </div>
+        <div class="form-group">
+          <label for="department" class="form-label">Departamento</label>
+          <input type="text" id="department" class="form-input" formControlName="department">
+        </div>
+        <div class="form-group">
+          <label for="province" class="form-label">Provincia</label>
+          <input type="text" id="province" class="form-input" formControlName="province">
+        </div>
+        <div class="form-group">
+          <label for="district" class="form-label">Distrito</label>
+          <input type="text" id="district" class="form-input" formControlName="district">
+        </div>
+        <div class="form-group">
+          <label for="subforum1" class="form-label">Nombre del Subforo 1</label>
+          <input type="text" id="subforum1" class="form-input" formControlName="subforum1">
+        </div>
+        <div class="form-group">
+          <label for="subforum2" class="form-label">Nombre del Subforo 2</label>
+          <input type="text" id="subforum2" class="form-input" formControlName="subforum2">
+        </div>
+        <div class="form-group">
+          <label for="subforum3" class="form-label">Nombre del Subforo 3</label>
+          <input type="text" id="subforum3" class="form-input" formControlName="subforum3">
+        </div>
+        <div class="form-group full-width">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea id="description" class="form-textarea" formControlName="description"></textarea>
+        </div>
+      </div>
+      <div class="image-upload-container">
+        <div class="upload-box">
+          <div class="upload-icon">⬆</div>
+          <div class="upload-text">Subir imagen</div>
+        </div>
+        <div class="id-text">ID: A4EF5</div>
+      </div>
+      <div class="buttons-container">
+        <button class="primary-button" (click)="goToHomePage()">Crear proyecto</button>
+        <button class="secondary-button" (click)="goToHomePage()">Cancelar</button>
+      </div>
+    </div>
+  </main>
+</div>
