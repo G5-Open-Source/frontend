@@ -1,0 +1,40 @@
+.main-forum {
+  display: flex;
+  justify-content: center;
+}
+
+.main-forum-button {
+  background-color: #27ae60;
+  color: white;
+  width: 50%;
+  font-size: 16px;
+}
+
+.main-forum-button:hover {
+  background-color: #219653;
+}
+
+.forum-button {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.forum-button:hover {
+  transform: translateY(-2px);
+}
+
+.forum-button:active {
+  transform: translateY(0);
+}
+
+.forum-icon {
+  font-style: normal;
+}

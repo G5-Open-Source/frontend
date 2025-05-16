@@ -1,0 +1,19 @@
+.project-info {
+  margin-bottom: 30px;
+}
+
+.project-info h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.project-list {
+  list-style-type: none;
+}
+
+.project-list li {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}

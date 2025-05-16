@@ -1,0 +1,15 @@
+<div class="subforum-section">
+  <div class="subforum-label">
+    <span>Subforos</span>
+  </div>
+
+  <div class="subforums">
+    <button
+      *ngFor="let forum of subForums"
+      class="forum-button subforum-button"
+      (click)="navigateToSubforum(forum)">
+      <span>{{ forum.name }}</span>
+      <i class="forum-icon">💬</i>
+    </button>
+  </div>
+</div>

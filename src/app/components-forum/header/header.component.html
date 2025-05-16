@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="logo-container">
+    <div class="logo">
+      <img src="assets/images/BeCode.png" alt="BeCode Logo" class="logo-icon">
+      <span class="logo-text">BeCode</span>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button
+      *ngFor="let item of navItems"
+      class="nav-button"
+      [class.active]="activeItem === item"
+      (click)="setActiveItem(item)">
+      {{ item }}
+    </button>
+  </div>
+
+  <div class="user-profile">
+    <div class="user-info">
+      <span class="username">{{ user.username }}</span>
+      <span class="user-role">{{ user.role }}</span>
+    </div>
+    <div class="user-avatar">
+      <img [src]="user.avatarUrl" alt="User Avatar" class="avatar-img">
+    </div>
+  </div>
+</header>
