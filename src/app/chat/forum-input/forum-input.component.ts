@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './forum-input.component.html',
-  styleUrls: ['./forum-input.component.scss']
+  styleUrls: ['./forum-input.component.css']
 })
 export class ForumInputComponent {
   mensaje: string = '';
