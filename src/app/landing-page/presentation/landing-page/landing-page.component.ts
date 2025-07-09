@@ -69,7 +69,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   goToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/select']);
   }
 
   goToLogin() {

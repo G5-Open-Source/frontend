@@ -2,36 +2,138 @@
   <header class="freelancer-header">
     <div class="header-left">
       <div class="logo-container">
-        <img src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png" alt="BeCode Logo" class="logo-image">
+        <img
+          src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png"
+          alt="BeCode Logo"
+          class="logo-image"
+        />
         <span class="logo-text">BeCode</span>
-      </div>
-    </div>
-    <div class="header-right">
-      <div class="header-info">
-        <p class="header-message">¡Bien hecho Kael! Completa este último paso para empezar esta nueva aventura.</p>
-      </div>
-      <div class="header-arrow">
-        &lt;
       </div>
     </div>
   </header>
 
   <main class="freelancer-main">
-    <div class="form-card">
+    <form [formGroup]="freelancerForm" (ngSubmit)="submitForm()">
       <div class="form-group">
-        <label for="projectId" class="form-label">ID del proyecto</label>
-        <input type="text" id="projectId" class="form-input" formControlName="projectId">
+        <label>Nombre</label>
+        <input
+          type="text"
+          formControlName="firstname"
+          placeholder="Ingresa tu nombre"
+        />
       </div>
 
       <div class="form-group">
-        <label for="invitationCode" class="form-label">Código de invitación</label>
-        <input type="text" id="invitationCode" class="form-input" formControlName="invitationCode">
+        <label>Apellido</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Ingresa tu apellido"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="ejemplo@correo.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>DNI</label>
+        <input type="text" formControlName="dni" placeholder="Número de DNI" />
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Crea una contraseña segura"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Edad</label>
+        <input type="text" formControlName="age" placeholder="Tu edad" />
+      </div>
+
+      <div class="form-group">
+        <label>Profesión</label>
+        <input
+          type="text"
+          formControlName="profession"
+          placeholder="Tu profesión actual"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Estado laboral</label>
+        <select
+          formControlName="workingStatus"
+          title="Selecciona tu estado laboral"
+        >
+          <option value="AVAILABLE">Disponible</option>
+          <option value="BUSY">Ocupado</option>
+          <option value="NOT_AVAILABLE">No disponible</option>
+          <option value="ON_PROJECT">En proyecto</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Pago promedio por hora</label>
+        <input
+          type="number"
+          formControlName="payment"
+          placeholder="Monto en soles"
+        />
+      </div>
+
+      <div formArrayName="studyCertificates">
+        <div
+          *ngFor="let cert of studyCertificates.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="form-group">
+            <label>Nombre del certificado</label>
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="Ej: Certificado en Java"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Descripción</label>
+            <input
+              type="text"
+              formControlName="description"
+              placeholder="Descripción breve"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Fecha de adquisición</label>
+            <input
+              type="datetime-local"
+              formControlName="adquisitionDate"
+              title="Selecciona la fecha de adquisición"
+            />
+          </div>
+        </div>
+        <button type="button" (click)="addCertificate()">
+          Agregar certificado
+        </button>
       </div>
 
       <div class="buttons-container">
-        <button class="primary-button" (click)="submitForm()">Ingresar</button>
-        <button class="secondary-button" (click)="goToHomePage()">Cancelar</button>
+        <button type="submit" class="primary-button">Registrar</button>
+        <button type="button" class="secondary-button" (click)="goToHomePage()">
+          Cancelar
+        </button>
       </div>
-    </div>
+    </form>
   </main>
 </div>

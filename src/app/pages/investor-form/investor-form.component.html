@@ -1,71 +1,178 @@
-<div class="investor-container">
-  <header class="investor-header">
+<div class="startup-container">
+  <header class="startup-header">
     <div class="header-left">
       <div class="logo-container">
-        <img src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png" alt="BeCode Logo" class="logo-image">
+        <img
+          src="https://res.cloudinary.com/dt0f3rrdh/image/upload/v1747376650/BeCode_sadadq.png"
+          alt="BeCode Logo"
+          class="logo-image"
+        />
         <span class="logo-text">BeCode</span>
       </div>
     </div>
     <div class="header-right">
-      <div class="header-info">
-        <p class="header-message">¡Muy bien Kael! Comencemos con la creación de tu proyecto. Recuerda que usted será el propietario.</p>
-      </div>
-      <div class="header-arrow">
-        &lt;
-      </div>
+      <div class="header-arrow">&lt;</div>
     </div>
   </header>
 
-  <main class="investor-main">
+  <main class="startup-main">
     <div class="form-card">
       <div class="form-grid">
         <div class="form-group">
-          <label for="projectName" class="form-label">Nombre del proyecto</label>
-          <input type="text" id="projectName" class="form-input" formControlName="projectName">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-input"
+            formControlName="firstName"
+            placeholder="Ingresa tu nombre"
+          />
         </div>
+
         <div class="form-group">
-          <label for="invitationCode" class="form-label">Código de invitación</label>
-          <input type="text" id="invitationCode" class="form-input" formControlName="invitationCode">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input
+            type="text"
+            id="lastName"
+            class="form-input"
+            formControlName="lastName"
+            placeholder="Ingresa tu apellido"
+          />
         </div>
+
         <div class="form-group">
-          <label for="department" class="form-label">Departamento</label>
-          <input type="text" id="department" class="form-input" formControlName="department">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            formControlName="email"
+            placeholder="ejemplo@email.com"
+          />
         </div>
+
         <div class="form-group">
-          <label for="province" class="form-label">Provincia</label>
-          <input type="text" id="province" class="form-input" formControlName="province">
+          <label for="dni" class="form-label">DNI</label>
+          <input
+            type="text"
+            id="dni"
+            class="form-input"
+            formControlName="dni"
+            placeholder="Ingresa tu DNI"
+          />
         </div>
+
         <div class="form-group">
-          <label for="district" class="form-label">Distrito</label>
-          <input type="text" id="district" class="form-input" formControlName="district">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            formControlName="password"
+            placeholder="********"
+          />
         </div>
+
         <div class="form-group">
-          <label for="subforum1" class="form-label">Nombre del Subforo 1</label>
-          <input type="text" id="subforum1" class="form-input" formControlName="subforum1">
+          <label for="age" class="form-label">Edad</label>
+          <input
+            type="number"
+            id="age"
+            class="form-input"
+            formControlName="age"
+            placeholder="Edad"
+          />
         </div>
+
         <div class="form-group">
-          <label for="subforum2" class="form-label">Nombre del Subforo 2</label>
-          <input type="text" id="subforum2" class="form-input" formControlName="subforum2">
+          <label for="profession" class="form-label">Profesión</label>
+          <input
+            type="text"
+            id="profession"
+            class="form-input"
+            formControlName="profession"
+            placeholder="Profesión"
+          />
         </div>
+
         <div class="form-group">
-          <label for="subforum3" class="form-label">Nombre del Subforo 3</label>
-          <input type="text" id="subforum3" class="form-input" formControlName="subforum3">
+          <label for="StartupName" class="form-label"
+            >Nombre del Proyecto</label
+          >
+          <input
+            type="text"
+            id="StartupName"
+            class="form-input"
+            formControlName="StartupName"
+            placeholder="Nombre del proyecto"
+          />
         </div>
+
         <div class="form-group full-width">
           <label for="description" class="form-label">Descripción</label>
-          <textarea id="description" class="form-textarea" formControlName="description"></textarea>
+          <textarea
+            id="description"
+            class="form-textarea"
+            formControlName="description"
+            placeholder="Describe tu proyecto..."
+          ></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="approach" class="form-label">Enfoque del proyecto</label>
+          <textarea
+            id="approach"
+            class="form-textarea"
+            formControlName="approach"
+            placeholder="¿Qué enfoque tiene tu startup?"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="hiringStatus" class="form-label"
+            >Estado de contratación</label
+          >
+          <select
+            id="hiringStatus"
+            class="form-input"
+            formControlName="hiringStatus"
+          >
+            <option value="ACTIVELY_HIRING">Activamente contratando</option>
+            <option value="NOT_HIRING">No contratando</option>
+            <option value="OPEN_TO_CANDIDATES">Abierto a candidatos</option>
+            <option value="PAUSED">Pausado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="workers" class="form-label"
+            >Cantidad de trabajadores</label
+          >
+          <input
+            type="number"
+            id="workers"
+            class="form-input"
+            formControlName="workers"
+            placeholder="Ej: 3"
+          />
         </div>
       </div>
+
       <div class="image-upload-container">
         <div class="upload-box">
           <div class="upload-icon">⬆</div>
-          <div class="upload-text">Subir imagen</div>
+          <div class="upload-text">Subir imagen (opcional)</div>
         </div>
         <div class="id-text">ID: A4EF5</div>
       </div>
+
       <div class="buttons-container">
-        <button class="primary-button" (click)="goToHomePage()">Crear proyecto</button>
-        <button class="secondary-button" (click)="goToHomePage()">Cancelar</button>
+        <button class="primary-button" (click)="submitForm()">
+          Crear proyecto
+        </button>
+        <button class="secondary-button" (click)="goToHomePage()">
+          Cancelar
+        </button>
       </div>
     </div>
   </main>
