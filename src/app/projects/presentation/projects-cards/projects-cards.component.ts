@@ -69,4 +69,7 @@ export class ProjectsCardsComponent implements OnInit {
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
   }
+  goToCreateProject(): void {
+    this.router.navigate(['/create-project']);
+  }
 }

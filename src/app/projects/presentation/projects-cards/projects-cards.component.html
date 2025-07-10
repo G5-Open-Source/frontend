@@ -22,6 +22,16 @@
   </mat-card>
 </div>
 
+<div
+  class="create-project-button-container"
+  style="text-align: right; margin: 1rem 0"
+>
+  <button mat-raised-button color="accent" (click)="goToCreateProject()">
+    <mat-icon>add</mat-icon>
+    Crear Proyecto
+  </button>
+</div>
+
 <mat-paginator
   [length]="projects.length"
   [pageSize]="pageSize"
