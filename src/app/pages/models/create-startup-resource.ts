@@ -9,13 +9,13 @@ export interface CreateStartupResource {
   profession: string;
   StartupName: string;
   description: {
-    description: string;
+    Description: string; // con mayúscula
   };
   approach: {
-    approach: string;
+    Approach: string; // con mayúscula
   };
   hiringStatus: string;
   workers: {
-    workersAmmount: number;
+    WorkersAmmount: number; // con mayúscula
   };
 }

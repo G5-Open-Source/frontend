@@ -16,164 +16,162 @@
   </header>
 
   <main class="startup-main">
-    <div class="form-card">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="firstName" class="form-label">Nombre</label>
-          <input
-            type="text"
-            id="firstName"
-            class="form-input"
-            formControlName="firstName"
-            placeholder="Ingresa tu nombre"
-          />
+    <form [formGroup]="startupForm" (ngSubmit)="submitForm()">
+      <div class="form-card">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-input"
+              formControlName="firstName"
+              placeholder="Ingresa tu nombre"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-input"
+              formControlName="lastName"
+              placeholder="Ingresa tu apellido"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              formControlName="email"
+              placeholder="ejemplo@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="dni" class="form-label">DNI</label>
+            <input
+              type="text"
+              id="dni"
+              class="form-input"
+              formControlName="dni"
+              placeholder="Ingresa tu DNI"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              formControlName="password"
+              placeholder="********"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="age" class="form-label">Edad</label>
+            <input
+              type="number"
+              id="age"
+              class="form-input"
+              formControlName="age"
+              placeholder="Edad"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="profession" class="form-label">Profesión</label>
+            <input
+              type="text"
+              id="profession"
+              class="form-input"
+              formControlName="profession"
+              placeholder="Profesión"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="StartupName" class="form-label"
+              >Nombre del Proyecto</label
+            >
+            <input
+              type="text"
+              id="StartupName"
+              class="form-input"
+              formControlName="StartupName"
+              placeholder="Nombre del proyecto"
+            />
+          </div>
+
+          <div class="form-group full-width" formGroupName="description">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea
+              id="description"
+              class="form-textarea"
+              formControlName="description"
+              placeholder="Describe tu proyecto..."
+            ></textarea>
+          </div>
+
+          <div class="form-group full-width" formGroupName="approach">
+            <label for="approach" class="form-label"
+              >Enfoque del proyecto</label
+            >
+            <textarea
+              id="approach"
+              class="form-textarea"
+              formControlName="approach"
+              placeholder="¿Qué enfoque tiene tu startup?"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="hiringStatus" class="form-label"
+              >Estado de contratación</label
+            >
+            <select
+              id="hiringStatus"
+              class="form-input"
+              formControlName="hiringStatus"
+            >
+              <option value="ACTIVELY_HIRING">Activamente contratando</option>
+              <option value="NOT_HIRING">No contratando</option>
+              <option value="OPEN_TO_CANDIDATES">Abierto a candidatos</option>
+              <option value="PAUSED">Pausado</option>
+            </select>
+          </div>
+
+          <div class="form-group" formGroupName="workers">
+            <label for="workersAmmount" class="form-label"
+              >Cantidad de trabajadores</label
+            >
+            <input
+              type="number"
+              id="workersAmmount"
+              class="form-input"
+              formControlName="workersAmmount"
+              placeholder="Ej: 3"
+            />
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="lastName" class="form-label">Apellido</label>
-          <input
-            type="text"
-            id="lastName"
-            class="form-input"
-            formControlName="lastName"
-            placeholder="Ingresa tu apellido"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="email" class="form-label">Correo electrónico</label>
-          <input
-            type="email"
-            id="email"
-            class="form-input"
-            formControlName="email"
-            placeholder="ejemplo@email.com"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="dni" class="form-label">DNI</label>
-          <input
-            type="text"
-            id="dni"
-            class="form-input"
-            formControlName="dni"
-            placeholder="Ingresa tu DNI"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="password" class="form-label">Contraseña</label>
-          <input
-            type="password"
-            id="password"
-            class="form-input"
-            formControlName="password"
-            placeholder="********"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="age" class="form-label">Edad</label>
-          <input
-            type="number"
-            id="age"
-            class="form-input"
-            formControlName="age"
-            placeholder="Edad"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="profession" class="form-label">Profesión</label>
-          <input
-            type="text"
-            id="profession"
-            class="form-input"
-            formControlName="profession"
-            placeholder="Profesión"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="StartupName" class="form-label"
-            >Nombre del Proyecto</label
+        <div class="buttons-container">
+          <button class="primary-button" type="submit">Crear proyecto</button>
+          <button
+            class="secondary-button"
+            type="button"
+            (click)="goToHomePage()"
           >
-          <input
-            type="text"
-            id="StartupName"
-            class="form-input"
-            formControlName="StartupName"
-            placeholder="Nombre del proyecto"
-          />
-        </div>
-
-        <div class="form-group full-width">
-          <label for="description" class="form-label">Descripción</label>
-          <textarea
-            id="description"
-            class="form-textarea"
-            formControlName="description"
-            placeholder="Describe tu proyecto..."
-          ></textarea>
-        </div>
-
-        <div class="form-group full-width">
-          <label for="approach" class="form-label">Enfoque del proyecto</label>
-          <textarea
-            id="approach"
-            class="form-textarea"
-            formControlName="approach"
-            placeholder="¿Qué enfoque tiene tu startup?"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="hiringStatus" class="form-label"
-            >Estado de contratación</label
-          >
-          <select
-            id="hiringStatus"
-            class="form-input"
-            formControlName="hiringStatus"
-          >
-            <option value="ACTIVELY_HIRING">Activamente contratando</option>
-            <option value="NOT_HIRING">No contratando</option>
-            <option value="OPEN_TO_CANDIDATES">Abierto a candidatos</option>
-            <option value="PAUSED">Pausado</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="workers" class="form-label"
-            >Cantidad de trabajadores</label
-          >
-          <input
-            type="number"
-            id="workers"
-            class="form-input"
-            formControlName="workers"
-            placeholder="Ej: 3"
-          />
+            Cancelar
+          </button>
         </div>
       </div>
-
-      <div class="image-upload-container">
-        <div class="upload-box">
-          <div class="upload-icon">⬆</div>
-          <div class="upload-text">Subir imagen (opcional)</div>
-        </div>
-        <div class="id-text">ID: A4EF5</div>
-      </div>
-
-      <div class="buttons-container">
-        <button class="primary-button" (click)="submitForm()">
-          Crear proyecto
-        </button>
-        <button class="secondary-button" (click)="goToHomePage()">
-          Cancelar
-        </button>
-      </div>
-    </div>
+    </form>
   </main>
 </div>
