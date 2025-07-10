@@ -15,4 +15,7 @@ export class StartupService {
   createStartup(startup: CreateStartupResource): Observable<any> {
     return this.http.post(`${this.baseUrl}`, startup);
   }
+  getAllStartups(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}`);
+  }
 }

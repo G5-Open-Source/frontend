@@ -1,68 +1,74 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FreelancerService } from '../application/freelancer.service';
+import { StartupService } from '../application/startup.service';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  loginForm: FormGroup;
-  showPassword = false;
+export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private freelancerService: FreelancerService,
+    private startupService: StartupService
+  ) {}
+
+  ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', Validators.required],
     });
   }
 
-  get email() {
-    return this.loginForm.get('email')!;
-  }
-
-  get password() {
-    return this.loginForm.get('password')!;
-  }
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const email = this.email.value;
-      const password = this.password.value;
-
-      const storedUser = localStorage.getItem('registeredUser');
-
-      if (storedUser) {
-        const user = JSON.parse(storedUser);
-
-        if (user.email === email && user.password === password) {
-          console.log('Login exitoso');
-          localStorage.setItem('loggedInUser', JSON.stringify(user));
-          this.router.navigate(['/home']);
-        } else {
-          alert('Correo o contraseña incorrectos');
-        }
-      } else {
-        alert('No hay usuarios registrados. Serás redirigido al registro.');
-        this.router.navigate(['/register']);
-      }
+  onSubmit(): void {
+    if (this.loginForm.invalid) {
+      alert('Por favor completa todos los campos requeridos');
+      return;
     }
-  }
 
-  goToRegister() {
-    this.router.navigate(['/register']);
+    const { email, password } = this.loginForm.value;
+
+    // Buscar en freelancers
+    this.freelancerService.getAllFreelancers().subscribe({
+      next: (freelancers) => {
+        const freelancer = freelancers.find(
+          (f: any) => f.emailUser.email === email
+        );
+
+        if (freelancer && freelancer.passworde === password) {
+          localStorage.setItem('userId', freelancer.id);
+          localStorage.setItem('userRole', 'FREELANCER');
+          alert('Bienvenido, freelancer');
+          this.router.navigate(['/forum']);
+          return;
+        }
+
+        // Si no es freelancer, buscar en startups
+        this.startupService.getAllStartups().subscribe({
+          next: (startups) => {
+            const startup = startups.find(
+              (s: any) => s.emailUser.email === email
+            );
+
+            if (startup && startup.passworde === password) {
+              localStorage.setItem('userId', startup.id);
+              localStorage.setItem('userRole', 'STARTUP');
+              alert('Bienvenido, startup');
+              this.router.navigate(['/forum']);
+            } else {
+              alert('Credenciales incorrectas');
+            }
+          },
+          error: () => alert('Error al consultar startups'),
+        });
+      },
+      error: () => alert('Error al consultar freelancers'),
+    });
   }
 }

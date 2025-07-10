@@ -15,4 +15,7 @@ export class FreelancerService {
   createFreelancer(freelancer: CreateFreelancerResource): Observable<any> {
     return this.http.post(`${this.baseUrl}`, freelancer);
   }
+  getAllFreelancers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}`);
+  }
 }
