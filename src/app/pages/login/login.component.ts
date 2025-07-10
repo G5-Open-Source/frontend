@@ -3,14 +3,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FreelancerService } from '../application/freelancer.service';
 import { StartupService } from '../application/startup.service';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  showPassword = false;
 
   constructor(
     private fb: FormBuilder,
@@ -22,8 +27,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
+  }
+
+  // ✅ Getters para el template
+  get email() {
+    return this.loginForm.get('email')!;
+  }
+
+  get password() {
+    return this.loginForm.get('password')!;
+  }
+
+  goToRegister() {
+    this.router.navigate(['/select']);
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
   onSubmit(): void {
@@ -34,7 +56,6 @@ export class LoginComponent implements OnInit {
 
     const { email, password } = this.loginForm.value;
 
-    // Buscar en freelancers
     this.freelancerService.getAllFreelancers().subscribe({
       next: (freelancers) => {
         const freelancer = freelancers.find(
@@ -49,7 +70,6 @@ export class LoginComponent implements OnInit {
           return;
         }
 
-        // Si no es freelancer, buscar en startups
         this.startupService.getAllStartups().subscribe({
           next: (startups) => {
             const startup = startups.find(
